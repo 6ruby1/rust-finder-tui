@@ -1,0 +1,16 @@
+[general]
+# Ignore certain rules, this example uses both full name and id
+ignore=body-is-missing, contrib-body-requires-signed-off-by
+
+# verbosity should be a value between 1 and 3, the commandline -v flags take precedence over this
+verbosity = 3
+
+# Enable community contributed rules
+# See http://jorisroovers.github.io/gitlint/contrib_rules for details
+contrib=contrib-title-conventional-commits,CC1
+
+[title-must-not-contain-word]
+# Comma-separated list of words that should not occur in the title. Matching is case
+# insensitive. It's fine if the keyword occurs as part of a larger word (so "WIPING"
+# will not cause a violation, but "WIP: my title" will.
+words=wip
