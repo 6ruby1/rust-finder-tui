@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+      - id: cargo-check
+        args: ["--workspace"]
+      - id: fmt
+        args: ["--", "--check"]
+      - id: clippy
+        args: ["--", "-D", "warnings"]
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
