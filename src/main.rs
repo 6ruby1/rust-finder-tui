@@ -72,3 +72,15 @@ impl App {
         self.running = false;
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn app_quits_on_key_q() {
+        let mut app = App::default();
+        app.handle_key_event(KeyCode::Char('q').into()).unwrap();
+        assert!(!app.running)
+    }
+}
