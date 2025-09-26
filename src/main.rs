@@ -9,4 +9,17 @@ fn main() {
             ..Default::default()
         },
     ));
+#[derive(Debug)]
+pub struct App {
+    query: String,
+    running: bool,
+}
+
+impl Default for App {
+    fn default() -> Self {
+        Self {
+            query: String::new(),
+            running: true,
+        }
+    }
 }
