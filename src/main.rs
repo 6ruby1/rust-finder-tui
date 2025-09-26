@@ -1,4 +1,5 @@
-use ratatui::crossterm::event::{Event, read};
+use color_eyre::eyre::WrapErr;
+use ratatui::crossterm::event::{Event, KeyCode, KeyEvent, KeyEventKind, read};
 use ratatui::{DefaultTerminal, Frame};
 
 fn main() -> color_eyre::Result<()> {
@@ -14,21 +15,23 @@ fn main() -> color_eyre::Result<()> {
     ));
     color_eyre::install()?;
     let mut terminal = ratatui::init();
-    let res = App::default().run(&mut terminal);
+    let result = App::default().run(&mut terminal);
     ratatui::restore();
-    res
+    result
 }
 
 #[derive(Debug)]
 pub struct App {
-    query: String,
+    // TODO: collect text input for search
+    // query: String,
     running: bool,
 }
 
 impl Default for App {
     fn default() -> Self {
         Self {
-            query: String::new(),
+            // TODO: collect text input for search
+            // query: String::new(),
             running: true,
         }
     }
@@ -38,14 +41,34 @@ impl App {
     pub fn run(&mut self, terminal: &mut DefaultTerminal) -> color_eyre::Result<()> {
         while self.running {
             terminal.draw(|frame| self.draw(frame))?;
-            if matches!(read()?, Event::Key(_)) {
-                self.running = false
-            }
+            self.handle_events().wrap_err("handle_events failed")?;
         }
         Ok(())
     }
 
-    pub fn draw(&self, frame: &mut Frame) {
+    fn draw(&self, frame: &mut Frame) {
         frame.render_widget("hello world", frame.area());
+    }
+
+    fn handle_events(&mut self) -> color_eyre::Result<()> {
+        match read()? {
+            Event::Key(key_ev) if key_ev.kind == KeyEventKind::Press => self
+                .handle_key_event(key_ev)
+                .wrap_err_with(|| format!("handle_key_event failed with:\n{key_ev:#?}")),
+            _ => Ok(()),
+        }
+    }
+
+    fn handle_key_event(&mut self, ev: KeyEvent) -> color_eyre::Result<()> {
+        match ev.code {
+            KeyCode::Char('q') => self.quit(),
+            //TODO: add other keybinds
+            _ => {}
+        }
+        Ok(())
+    }
+
+    fn quit(&mut self) {
+        self.running = false;
     }
 }
