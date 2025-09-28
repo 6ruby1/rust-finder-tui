@@ -1,6 +1,8 @@
 # rust-finder-tui
 
-A Rust-based terminal user interface (TUI) application.
+## About This Project
+
+**rust-finder-tui** is a terminal-based file finder built in Rust as a portfolio project, focused on applying newly learned language concepts with an emphasis on project planning, maintainable architecture, and documentation. 
 
 ## Getting Started
 
