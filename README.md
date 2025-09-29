@@ -1,8 +1,11 @@
 # rust-finder-tui
 
-[![Build Status](https://github.com/6ruby1/rust-finder-tui/actions/workflows/build.yml/badge.svg)](https://github.com/6ruby1/rust-finder-tui/actions/workflows/build.yml)
-[![License](https://img.shields.io/github/license/6ruby1/rust-finder-tui)](./LICENSE)
-[![Issues](https://img.shields.io/github/issues/6ruby1/rust-finder-tui)](https://github.com/6ruby1/rust-finder-tui/issues)
+[![GitHub Actions Workflow Status](https://custom-icon-badges.demolab.com/github/actions/workflow/status/6ruby1/rust-finder-tui/build.yml?style=for-the-badge&logo=play&logoSize=auto&labelColor=%23323449&color=%23a48cf2)](https://github.com/6ruby1/rust-finder-tui/actions/workflows/build.yml)
+[![GitHub License](https://custom-icon-badges.demolab.com/github/license/6ruby1/rust-finder-tui?style=for-the-badge&logo=law&logoSize=auto&labelColor=%23323449&color=%23f1fc79)](./LICENSE)
+[![Open Issues](https://custom-icon-badges.demolab.com/github/issues-raw/6ruby1/rust-finder-tui?style=for-the-badge&logo=issue-opened&logoColor=%233fb950&labelColor=%23323449&color=%23f7c67f)](https://github.com/6ruby1/rust-finder-tui/issues)
+[![Closed Issues](https://custom-icon-badges.demolab.com/github/issues-closed-raw/6ruby1/rust-finder-tui?style=for-the-badge&logo=issue-closed&logoColor=%23ab7df8&labelColor=%23323449&color=%237081d0)](https://github.com/6ruby1/rust-finder-tui/issues?q=is%3Aissue%20state%3Aclosed)
+
+---
 
 ## About This Project
 
